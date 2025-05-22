@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_906f76d6290c60d7fa6e8ad21b282520 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_906f76d6290c60d7fa6e8ad21b282520" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_906f76d6290c60d7fa6e8ad21b282520 = L.map(
+                "map_906f76d6290c60d7fa6e8ad21b282520",
+                {
+                    center: [55.82110334844892, 49.16084964821941],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_630a1da11c5494d866bb1f3ab2a5dbe9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_630a1da11c5494d866bb1f3ab2a5dbe9.addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+            var marker_d4cc5d97c53d34ad527f244dbefa5166 = L.marker(
+                [55.82110334844892, 49.16084964821941],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+            var icon_e926963ea6503fdad1d4511b601b723f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_901baf6d5f250056d42e42e7a16b579e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3c1c12e5d079ae49274bc788045b467 = $(`<div id="html_e3c1c12e5d079ae49274bc788045b467" style="width: 100.0%; height: 100.0%;">Старт: Ак Барс Арена</div>`)[0];
+                popup_901baf6d5f250056d42e42e7a16b579e.setContent(html_e3c1c12e5d079ae49274bc788045b467);
+            
+        
+
+        marker_d4cc5d97c53d34ad527f244dbefa5166.bindPopup(popup_901baf6d5f250056d42e42e7a16b579e)
+        ;
+
+        
+    
+    
+                marker_d4cc5d97c53d34ad527f244dbefa5166.setIcon(icon_e926963ea6503fdad1d4511b601b723f);
+            
+    
+            var marker_4973843a0536ebfe0cf0727101fe2a55 = L.marker(
+                [59.97300312632598, 30.221484104063816],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+        var popup_d46af3a0cfa868b8e6ac3723e49d8219 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a585a4886d2108f9f9fff4e871133030 = $(`<div id="html_a585a4886d2108f9f9fff4e871133030" style="width: 100.0%; height: 100.0%;">Газпром Арена</div>`)[0];
+                popup_d46af3a0cfa868b8e6ac3723e49d8219.setContent(html_a585a4886d2108f9f9fff4e871133030);
+            
+        
+
+        marker_4973843a0536ebfe0cf0727101fe2a55.bindPopup(popup_d46af3a0cfa868b8e6ac3723e49d8219)
+        ;
+
+        
+    
+    
+            var marker_b201480d3e7e2cbce8b22fa7ba7fc870 = L.marker(
+                [55.79948881791929, 49.10607401098021],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+        var popup_740e64b4d88cf03335e53965b0158f02 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5b18e23417418d74d7f3be8c69d3b61 = $(`<div id="html_a5b18e23417418d74d7f3be8c69d3b61" style="width: 100.0%; height: 100.0%;">Казанский Кремль</div>`)[0];
+                popup_740e64b4d88cf03335e53965b0158f02.setContent(html_a5b18e23417418d74d7f3be8c69d3b61);
+            
+        
+
+        marker_b201480d3e7e2cbce8b22fa7ba7fc870.bindPopup(popup_740e64b4d88cf03335e53965b0158f02)
+        ;
+
+        
+    
+    
+            var marker_c199695f7a9f1bcab1a5c73f508e1dac = L.marker(
+                [43.40154639931279, 39.955711554446175],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+        var popup_2536946b95c83eb6a36e395f8843dc69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5b1a8ef59604dd19be2a1618fcc2d2e = $(`<div id="html_a5b1a8ef59604dd19be2a1618fcc2d2e" style="width: 100.0%; height: 100.0%;">Стадион Фишт</div>`)[0];
+                popup_2536946b95c83eb6a36e395f8843dc69.setContent(html_a5b1a8ef59604dd19be2a1618fcc2d2e);
+            
+        
+
+        marker_c199695f7a9f1bcab1a5c73f508e1dac.bindPopup(popup_2536946b95c83eb6a36e395f8843dc69)
+        ;
+
+        
+    
+    
+            var marker_23cacd3d769b0144fe4a6d7aa7a6dbce = L.marker(
+                [53.28779955113818, 50.233336054893904],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+        var popup_f57e78e4747b77dc1f19f4abfc9fc763 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d7f63eee1016ae8ddbe0d427372913e = $(`<div id="html_7d7f63eee1016ae8ddbe0d427372913e" style="width: 100.0%; height: 100.0%;">Самара Арена</div>`)[0];
+                popup_f57e78e4747b77dc1f19f4abfc9fc763.setContent(html_7d7f63eee1016ae8ddbe0d427372913e);
+            
+        
+
+        marker_23cacd3d769b0144fe4a6d7aa7a6dbce.bindPopup(popup_f57e78e4747b77dc1f19f4abfc9fc763)
+        ;
+
+        
+    
+    
+            var marker_aa5dc59342f4a14f27509e1d3b7cabe7 = L.marker(
+                [45.045003744805065, 39.028675472709146],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+        var popup_c5e1366d0098f7745a37299ad09035f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96c8dd29ccc2e8d81afcc46d2afff71b = $(`<div id="html_96c8dd29ccc2e8d81afcc46d2afff71b" style="width: 100.0%; height: 100.0%;">Озон Арена</div>`)[0];
+                popup_c5e1366d0098f7745a37299ad09035f1.setContent(html_96c8dd29ccc2e8d81afcc46d2afff71b);
+            
+        
+
+        marker_aa5dc59342f4a14f27509e1d3b7cabe7.bindPopup(popup_c5e1366d0098f7745a37299ad09035f1)
+        ;
+
+        
+    
+    
+            var marker_bc2a748a91f68978ca0f12180cdc9435 = L.marker(
+                [55.715511013775696, 37.55327238956812],
+                {
+}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+    
+        var popup_453814ef88b9bea12521e2c21b70d648 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a7e41f7a2e8e8a5dedc937ed8a3d3e8 = $(`<div id="html_3a7e41f7a2e8e8a5dedc937ed8a3d3e8" style="width: 100.0%; height: 100.0%;">Стадион Лужники</div>`)[0];
+                popup_453814ef88b9bea12521e2c21b70d648.setContent(html_3a7e41f7a2e8e8a5dedc937ed8a3d3e8);
+            
+        
+
+        marker_bc2a748a91f68978ca0f12180cdc9435.bindPopup(popup_453814ef88b9bea12521e2c21b70d648)
+        ;
+
+        
+    
+    
+            var poly_line_01d6990e8d7a93ccf681e8b6cab948ea = L.polyline(
+                [[55.82110334844892, 49.16084964821941], [59.97300312632598, 30.221484104063816], [55.79948881791929, 49.10607401098021], [43.40154639931279, 39.955711554446175], [53.28779955113818, 50.233336054893904], [45.045003744805065, 39.028675472709146], [55.715511013775696, 37.55327238956812]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_906f76d6290c60d7fa6e8ad21b282520);
+        
+</script>
+</html>
