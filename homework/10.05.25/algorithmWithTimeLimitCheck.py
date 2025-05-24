@@ -7,7 +7,7 @@ import folium
 import time
 
 # Параметры задачи
-FILENAME = "C:\\Users\\sayid\\PycharmProjects\\MachineLearning\\resources\\points.csv"
+FILENAME = "C:\\Users\\sayid\\PycharmProjects\\MachineLearning\\resources\\points2.csv"
 TRANSPORT = 'car'  # 'foot', 'car', 'bike'
 TIME_LIMIT = 5     # Дни (можно менять)
 POP_SIZE = 100      # Размер популяции
@@ -114,18 +114,38 @@ for i, name in enumerate(route_names):
 print(f"Суммарный приоритет: {total_priority}")
 print(f"Примерное время маршрута: {route_time:.1f} дней")
 
-# ==== 5. Визуализация маршрута ====
+# ==== 5. Визуализация маршрута по дорогам ====
 m = folium.Map(location=route[0], zoom_start=12)
+
+# Стартовая точка
 folium.Marker(route[0], popup="Старт: " + route_names[0],
               icon=folium.Icon(color='green')).add_to(m)
 
-for latlon, name in zip(route[1:-1], route_names[1:-1]):  # Промежуточные точки
+# Промежуточные точки
+for latlon, name in zip(route[1:-1], route_names[1:-1]):
     folium.Marker(latlon, popup=name).add_to(m)
 
+# Финишная точка
 if len(route) > 1:
     folium.Marker(route[-1], popup="Финиш: " + route_names[-1],
                   icon=folium.Icon(color='red')).add_to(m)
 
-folium.PolyLine(route, color="red", weight=4).add_to(m)
+# Строим маршрут по дорогам между точками
+for i in range(len(route) - 1):
+    lat1, lon1 = route[i]
+    lat2, lon2 = route[i + 1]
+    url = f"http://router.project-osrm.org/route/v1/{TRANSPORT}/{lon1},{lat1};{lon2},{lat2}?overview=full&geometries=geojson"
+    try:
+        r = requests.get(url)
+        data = r.json()
+        if "routes" in data and data["routes"]:
+            geometry = data["routes"][0]["geometry"]
+            folium.GeoJson(geometry, name=f"Segment {i}").add_to(m)
+        else:
+            print(f"Не удалось получить маршрут {i} → {i+1}")
+    except Exception as e:
+        print(f"Ошибка запроса маршрута {i} → {i+1}: {e}")
+    time.sleep(0.1)
+
 m.save("best_route_time_limit_check_kazan.html")
 print("Карта маршрута сохранена как best_route_time_limit_check_kazan.html")

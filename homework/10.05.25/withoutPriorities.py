@@ -7,8 +7,8 @@ import folium
 import time
 
 # Параметры
-FILENAME = "C:\\Users\\sayid\\PycharmProjects\\MachineLearning\\resources\\points.csv"
-TRANSPORT = 'foot'
+FILENAME = "C:\\Users\\sayid\\PycharmProjects\\MachineLearning\\resources\\points2.csv"
+TRANSPORT = 'car'
 POP_SIZE = 100
 NGEN = 100
 
@@ -85,12 +85,35 @@ for i, name in enumerate(route_names):
     print(f"{i+1}. {name}")
 print(f"Суммарное время маршрута: {route_time:.1f} мин")
 
-# 5. Визуализация
+# 5. Визуализация маршрута по дорогам
 m = folium.Map(location=route[0], zoom_start=12)
+
+# Добавляем первую точку
 folium.Marker(route[0], popup="Старт: " + route_names[0],
               icon=folium.Icon(color='green')).add_to(m)
+
+# Добавляем остальные точки
 for latlon, name in zip(route[1:], route_names[1:]):
     folium.Marker(latlon, popup=name).add_to(m)
-folium.PolyLine(route, color="blue", weight=4).add_to(m)
+
+# Рисуем маршрут по дорогам
+for i in range(len(route) - 1):
+    lat1, lon1 = route[i]
+    lat2, lon2 = route[i + 1]
+    url = f"http://router.project-osrm.org/route/v1/{TRANSPORT}/{lon1},{lat1};{lon2},{lat2}?overview=full&geometries=geojson"
+
+    try:
+        r = requests.get(url)
+        data = r.json()
+        if "routes" in data and data["routes"]:
+            geometry = data["routes"][0]["geometry"]
+            folium.GeoJson(geometry, name=f"Route {i}").add_to(m)
+        else:
+            print(f"Не удалось получить маршрут между точками {i} и {i+1}")
+    except Exception as e:
+        print(f"Ошибка запроса маршрута {i} → {i+1}: {e}")
+    time.sleep(0.1)
+
 m.save("shortest_route_kazan.html")
 print("Карта маршрута сохранена как shortest_route_kazan.html")
+
